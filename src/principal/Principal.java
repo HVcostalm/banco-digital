@@ -24,7 +24,7 @@ public class Principal {
 		contaJoao.imprimirExtrato();
 		contaMatheus.imprimirExtrato();
 		
-		contaJoao.transferência(600, contaMatheus);
+		contaJoao.transferencia(600, contaMatheus);
 		
 		contaJoao.imprimirExtrato();
 		contaMatheus.imprimirExtrato();
@@ -35,12 +35,12 @@ public class Principal {
 		contaJoao.imprimirExtrato();
 		contaMatheus.imprimirExtrato();
 		
-		contaJoao.transferência(400, contaMatheus);
+		contaJoao.transferencia(400, contaMatheus);
 		
 		contaJoao.imprimirExtrato();
 		contaMatheus.imprimirExtrato();
 		
-		contaMatheus.transferência(250, contaJoao);
+		contaMatheus.transferencia(250, contaJoao);
 		
 		contaJoao.imprimirExtrato();
 		contaMatheus.imprimirExtrato();

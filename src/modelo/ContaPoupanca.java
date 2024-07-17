@@ -12,4 +12,8 @@ public class ContaPoupanca extends Conta{
 		super.imprimirInfos();
 	}
 
+	public double rendimentoPorMes(int mes) {
+		return this.saldo*0.01*mes;
+	}
+
 }

@@ -1,11 +1,11 @@
 package modelo;
 
 public interface IConta {
-	boolean sacar(double valor);
+	void sacar(double valor);
 	
 	void depositar(double valor);
 	
-	void transferência(double valor, IConta contaDestino);
+	void transferencia(double valor, IConta contaDestino);
 	
 	void imprimirExtrato();
 
