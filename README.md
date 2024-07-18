@@ -21,6 +21,4 @@ Reforçar o conhecimento em Programação Orientada a Objetos (POO) em Java, atr
 
 ## 📞 Entre em contato
 
-Qualquer dúvida entre em comigo por meio do email abaixo
-
-- hv.costalm22@gmail.com
+Qualquer dúvida mande um Issue.
