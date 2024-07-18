@@ -12,8 +12,8 @@ public class ContaPoupanca extends Conta{
 		super.imprimirInfos();
 	}
 
-	public double rendimentoPorMes(int mes) {
-		return this.saldo*0.01*mes;
+	public void rendimentoPorMes(int mes) {
+		System.out.println(this.cliente.getNome() + ", seu rendimento ao deixar seu dinheiro atual no banco por " + mes + " mes(es) é: " +this.saldo*0.01*mes);
 	}
 
 }
