@@ -19,11 +19,13 @@ public abstract class Conta implements IConta{
 		this.cliente = cliente;
 	}
 	@Override
-	public void sacar(double valor) {
+	public boolean sacar(double valor) {
 		if(valor<=saldo && valor>0) {
 			this.saldo -= valor;
+			return true;
 		} else {
 			System.out.println("Saldo insuficiente ou valor inválido");
+			return false;
 		}
 	}
 	
@@ -33,8 +35,7 @@ public abstract class Conta implements IConta{
 	}
 	@Override
 	public void transferencia(double valor, IConta contaDestino) {
-		if(valor<=this.saldo && valor>0) {
-			this.sacar(valor);
+		if(this.sacar(valor)) {
 			contaDestino.depositar(valor);
 		} else
 			System.out.println("Transferencia nao pode ser realizada. Saldo insuficiente ou valor inválido");

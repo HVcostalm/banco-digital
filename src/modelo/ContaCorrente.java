@@ -13,10 +13,12 @@ public class ContaCorrente extends Conta{
 		this.limiteEspecial = limiteEspecialBanco;
 	}
 	
-	public void sacar(double valor) {
+	public boolean sacar(double valor) {
 		String confirmacao;
-		if(valor<=this.saldo && valor>0)
+		if(valor<=this.saldo && valor>0) {
 			this.saldo -= valor;
+			return true;
+		}
 		else if(valor<=(this.limiteEspecial+this.saldo)) {
 			System.out.println("Saldo insuficiente, mas seu limite especial cobre seu saque");
 			System.out.println("Voce deseja realizar o saque utilizando o limite especial? [Sim/Nao]");
@@ -25,34 +27,15 @@ public class ContaCorrente extends Conta{
 				{
 					this.limiteEspecial -= (valor-this.saldo);
 					this.saldo=0;
+					return true;
 				} else {
 					System.out.println("Saque nao realizado");
+					return false;
 				}
-		} else
+		} else {
 			System.out.println("Saldo insuficiente ou valor inválido");
-			
-	}
-	
-	public void transferencia(double valor, IConta contaDestino) {
-		String confirmacao;
-		if(valor<=this.saldo && valor>0) {
-			this.saldo -= valor;
-			contaDestino.depositar(valor);
+			return false;
 		}
-		else if(valor<=(this.limiteEspecial+this.saldo)) {
-			System.out.println("Saldo insuficiente");
-			System.out.println("Voce deseja realizar a transferencia utilizando o limite especial? [Sim/Nao]");
-			confirmacao = scanner.next();
-			if(confirmacao.equalsIgnoreCase("sim"))
-				{
-					this.limiteEspecial -= (valor-this.saldo);
-					this.saldo=0;
-					contaDestino.depositar(valor);
-				} else {
-					System.out.println("Transferencia nao realizada");
-				}
-		} else
-			System.out.println("Transferencia nao pode ser realizada. Saldo insuficiente ou valor inválido");
 	}
 	
 	
